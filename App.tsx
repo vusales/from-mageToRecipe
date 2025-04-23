@@ -1,26 +1,15 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import {
   ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
   useColorScheme,
   View,
-  TouchableOpacity, 
 } from 'react-native';
 import {
   Colors,
-  Header,
 } from 'react-native/Libraries/NewAppScreen';
-
-
+import PhotoContainer from './containers/PhotoContainer';
 
 
 function App(): React.JSX.Element {
@@ -41,18 +30,15 @@ function App(): React.JSX.Element {
       <ScrollView
         style={backgroundStyle}
       >
-        <View style={{paddingRight: safePadding}}>
-          <Header/>
-        </View>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
             paddingHorizontal: safePadding,
             paddingBottom: safePadding,
-          }}>
-            <TouchableOpacity>
-              <Text>UPLOAD IMAGE</Text>
-            </TouchableOpacity>
+            flex: 1,
+          }}
+        >
+          <PhotoContainer />
         </View>
       </ScrollView>
     </View>
